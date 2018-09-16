@@ -1,0 +1,39 @@
+// Most things depend on bourbon and neat, so grab them here
+// @import "bourbon";
+// @import "neat";
+
+// Observe ITCSS
+// https://speakerdeck.com/dafed/managing-css-projects-with-itcss
+// ==========================
+
+// Tools
+// @import "./stylesheets/tools/omega-reset";
+// @import "./stylesheets/tools/locale-images";
+
+// Settings
+// @import "./stylesheets/settings/fonts";
+// @import "./stylesheets/settings/colours";
+// @import "./stylesheets/settings/grid";
+
+// Generic
+@import "./stylesheets/generic/index.css";
+
+// Elements
+// @import "./stylesheets/elements/buttons";
+// @import "./stylesheets/elements/inputs";
+// @import "./stylesheets/elements/types";
+// @import "./stylesheets/elements/links";
+
+// Objects
+// @import "./stylesheets/objects/forms";
+
+// Components
+// @import "./stylesheets/components/induction";
+// @import "./stylesheets/components/language-selection";
+// @import "./stylesheets/components/language-list";
+// @import "./stylesheets/components/language-card";
+// @import "./stylesheets/components/club-selection";
+// @import "./stylesheets/components/language-dropdown";
+// @import "./stylesheets/components/no-clubs-notification";
+// @import "./stylesheets/components/club-creation";
+// Trumps
