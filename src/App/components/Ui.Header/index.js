@@ -1,20 +1,22 @@
 import React, { Component } from "react";
-import NavBar from "../mod.navBar";
+import Menu from "../obj.Menu";
 import Logo from "../atm.Logo";
-
+import { getLinks } from "../../utils";
 import { StyledHeader } from "./style";
 
 class Header extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      linkItems: getLinks()
+    };
   }
   render() {
     console.log(this);
     return (
       <StyledHeader className={StyleSheet.header}>
         <Logo />
-        <NavBar />
+        <Menu links={this.state.linkItems} />
       </StyledHeader>
     );
   }
