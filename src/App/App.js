@@ -4,8 +4,9 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Home from "./views/Home";
 import About from "./views/About";
 import Projects from "./views/Projects";
-import NavBar from "./components/Ui.navBar/navbar";
 import NotFound from "./views/NotFound";
+
+import Header from "./components/Ui.Header";
 
 import logo from "../logo.svg";
 import "./App.scss";
@@ -15,7 +16,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar />
+        <Header />
         <div className="content">
           <Switch>
             <Route path="/about" component={About} />
