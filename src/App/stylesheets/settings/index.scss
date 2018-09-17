@@ -131,3 +131,13 @@ $mobile-grid: (
   media: "(max-width: 640px)",
   color: rgba(#00d4ff, 0.25)
 );
+.lightred {
+  fill: #f07c7e;
+}
+.lightgray {
+  fill: #c9c5c4;
+}
+
+a.active {
+  color: #000;
+}

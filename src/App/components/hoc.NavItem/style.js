@@ -15,5 +15,5 @@ const NavItem = css`
 `;
 
 export const StyledNavItem = styled.li`
-  ${NavItem} color: #000;
+  ${NavItem} color: #c9c5c4;
 `;

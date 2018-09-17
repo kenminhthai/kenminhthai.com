@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Menu from "../obj.Menu";
-import Logo from "../atm.Logo";
+import { Logo } from "../atm.Logo";
 import { getLinks } from "../../utils";
 import { StyledHeader } from "./style";
 
