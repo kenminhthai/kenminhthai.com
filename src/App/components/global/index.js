@@ -87,8 +87,12 @@ export const fontStack = css`
   font-family: "Maison Neue", "Helvetica", sans-serif;
 `;
 
-export const headingStack = css`
+export const fontHeading = css`
   font-family: "bebasbold", sans-serif;
+`;
+
+export const Red = css`
+  color: #fc414c;
 `;
 
 const spin = keyframes`
@@ -248,7 +252,7 @@ export const H1 = styled.h1`
 
 export const H2 = styled.h2`
   color: ${theme.text.default};
-  ${fontStack};
+  ${fontHeading};
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.25;

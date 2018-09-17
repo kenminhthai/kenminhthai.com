@@ -5,7 +5,7 @@ import { StyledNavItem } from "./style";
 const NavItem = props => (
   <StyledNavItem>
     <Links
-      key={props.key}
+      key={props.name}
       link={props.link}
       exact={props.exact}
       name={props.name}

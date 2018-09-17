@@ -4,7 +4,7 @@ import NavItem from "../hoc.NavItem/index";
 const NavBar = props => {
   return (
     <NavItem
-      key={props.key}
+      key={props.name}
       link={props.link}
       exact={props.exact}
       name={props.name}

@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 
 function Links(props) {
-  console.log(props);
   return (
     <NavLink to={props.link} exact={props.exact} activeClassName="active">
       {props.name}
