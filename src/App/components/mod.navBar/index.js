@@ -1,15 +1,14 @@
 import React from "react";
-import { NavItem } from "../atm.NavLink";
+import NavItem from "../hoc.NavItem/index";
 
 const NavBar = props => {
   return (
-    <nav>
-      <ul>
-        <NavItem link="/">Home</NavItem>
-        <NavItem link="/about">About</NavItem>
-        <NavItem link="/works">Works</NavItem>
-      </ul>
-    </nav>
+    <NavItem
+      key={props.key}
+      link={props.link}
+      exact={props.exact}
+      name={props.name}
+    />
   );
 };
 

@@ -1,11 +1,26 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { StyledLink } from "./style";
+import PropTypes from "prop-types";
 
-export const NavItem = props => (
-  <StyledLink>
+function Links(props) {
+  console.log(props);
+  return (
     <NavLink to={props.link} exact={props.exact} activeClassName="active">
-      {props.children}
+      {props.name}
     </NavLink>
-  </StyledLink>
-);
+  );
+}
+
+Links.propTypes = {
+  to: PropTypes.string.isRequired,
+  exact: PropTypes.bool,
+  children: PropTypes.string
+};
+
+Links.defaultProps = {
+  to: "/",
+  exact: true,
+  children: "Home"
+};
+
+export default Links;

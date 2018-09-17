@@ -1,18 +1,105 @@
+@font-face {
+  font-family: "bebasbold";
+  src: url("http://kenminhthai.com/assets/fonts/bebasneuebold.woff");
+  src: url("http://kenminhthai.com/assets/fonts/bebasneuebold.eot?#iefix")
+      format("embedded-opentype"),
+    url("http://kenminhthai.com/assets/fonts/bebasneuebold.woff") format("woff"),
+    url("http://kenminhthai.com/assets/fonts/bebasneuebold.ttf")
+      format("truetype"),
+    url("http://kenminhthai.com/assets/fonts/bebasneuebold.svg#bebasregular")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Maison Neue";
+  src: url("https://kenminhthai.com/assets/fonts/MaisonNeue-LightItalic.woff2")
+      format("woff2"),
+    url("//kenminhthai.com/assets/fonts/MaisonNeue-LightItalic.woff")
+      format("woff"),
+    url("//kenminhthai.com/assets/fonts/MaisonNeue-LightItalic.ttf")
+      format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Maison Neue";
+  src: url("https://kenminhthai.com/assets/fonts/MaisonNeue-Light.woff2")
+      format("woff2"),
+    url("https://kenminhthai.com/assets/fonts/MaisonNeue-Light.woff")
+      format("woff"),
+    url("https://kenminhthai.com/assets/fonts/MaisonNeue-Light.ttf")
+      format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Maison Neue";
+  src: url("https://kenminhthai.com/assets/fonts/MaisonNeue-Book.woff2")
+      format("woff2"),
+    url("https://kenminhthai.com/assets/fonts/MaisonNeue-Book.woff")
+      format("woff"),
+    url("https://kenminhthai.com/assets/fonts/MaisonNeue-Book.ttf")
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Maison Neue";
+  src: url("https://kenminhthai.com/assets/fonts/MaisonNeue-BookItalic.woff2")
+      format("woff2"),
+    url("https://kenminhthai.com/assets/fonts/MaisonNeue-BookItalic.woff")
+      format("woff"),
+    url("https://kenminhthai.com/assets/fonts/MaisonNeue-BookItalic.ttf")
+      format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Maison Neue Mono";
+  src: url("https://kenminhthai.com/assets/fonts/MaisonNeue-Mono.woff2")
+      format("woff2"),
+    url("https://kenminhthai.com/assets/fonts/MaisonNeue-Mono.woff")
+      format("woff"),
+    url("https://kenminhthai.com/assets/fonts/MaisonNeue-Mono.ttf")
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Maison Neue Mono";
+  src: url("https://kenminhthai.com/assets/fonts/MaisonNeue-MonoItalic.woff2")
+      format("woff2"),
+    url("https://kenminhthai.com/assets/fonts/MaisonNeue-MonoItalic.woff")
+      format("woff"),
+    url("https://kenminhthai.com/assets/fonts/MaisonNeue-MonoItalic.ttf")
+      format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
 // Colors
 
-$black: #222;
+$black: #000;
 $green: #7dd720;
 $blue: #207dd7;
 $dark-blue: #1c70c1;
 $grey: #9a9a9a;
 $light-grey: #f0f0f0;
+$base-white: #f2f2f2;
 $green: #7ed321;
 $green-complimentary: #67b815;
-$red: #de2110;
+$red: #fc414c;
 
 // Fonts
 
-$font-stack: "Open Sans", sans-serif;
+$font-stack: "Maison Neue", sans-serif;
+$font-heading: "bebasbold", sans-serif;
 
 // Set the default grid settings (anything above tablet)
 $neat-grid: (
