@@ -12,7 +12,6 @@ class Header extends Component {
     };
   }
   render() {
-    console.log(this);
     return (
       <StyledHeader className={StyleSheet.header}>
         <Logo />
