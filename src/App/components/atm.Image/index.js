@@ -2,7 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Img(props) {
-  return <img className={props.className} src={props.src} alt={props.alt} />;
+  return (
+    <img
+      className={props.className}
+      src={props.src}
+      alt={props.alt}
+      width={props.width}
+    />
+  );
 }
 
 Img.propTypes = {
