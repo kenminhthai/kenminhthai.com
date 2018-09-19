@@ -9,6 +9,7 @@ import Home from "./views/Home";
 import About from "./views/About";
 import Projects from "./views/Projects";
 import NotFound from "./views/NotFound";
+import { ProjectList } from "../App/utils";
 
 import "./App.scss";
 import ProjectDetails from "./views/ProjectDetails";
@@ -32,7 +33,10 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route path="/about" component={About} />
-          <Route path="/works" component={Projects} />
+          <Route
+            path="/works"
+            render={props => <Projects data={ProjectList} />}
+          />
           <Route path="/works/:project-name" component={ProjectDetails} />
           <Route path="/not-found" component={NotFound} />
           <Route exact path="/" render={() => <Home />} />
