@@ -29,24 +29,24 @@ const CTA = styled.div`
 export const ProjectInfo = props => {
   return (
     <ProjectBox>
-      <h1>{props.name}</h1>
+      <h1>{props.info.name}</h1>
       <InfoRow>
         <InfoBox>
           <div>Role</div>
-          <div>{props.role}</div>
+          <div>{props.info.role}</div>
         </InfoBox>
         <InfoBox>
           <div>Company</div>
-          <div>{props.company}</div>
+          <div>{props.info.company}</div>
         </InfoBox>
         <InfoBox>
           <div>Completed</div>
-          <div>{props.year}</div>
+          <div>{props.info.year}</div>
         </InfoBox>
       </InfoRow>
-      <DescBlock>{props.desc}</DescBlock>
+      <DescBlock>{props.info.desc}</DescBlock>
       <CTA>
-        <a href={props.link}>view project</a>
+        <a href={props.info.link}>view project</a>
       </CTA>
     </ProjectBox>
   );

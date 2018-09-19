@@ -12,5 +12,5 @@ const TextBg = styled.div`
 `;
 
 export const TxtBg = props => {
-  return <TextBg>{props.text}</TextBg>;
+  return <TextBg key={props.text}>{props.text}</TextBg>;
 };
