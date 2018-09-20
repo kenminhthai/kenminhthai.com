@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import { TransitionGroup, Transition } from "react-transition-group";
 import styled from "styled-components";
 
-import { ProjectMedia } from "./projectMedia";
-import { ProjectInfo } from "./projectInfo";
+import ProjectMedia from "./projectMedia";
+import ProjectInfo from "./projectInfo";
 import { TimelineMax, TimelineLite } from "gsap";
 
 const Box = styled.section`
