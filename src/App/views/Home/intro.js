@@ -1,19 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 import { fontStack } from "../../components/global/index";
+import { P } from "../../components/global";
 
 const TextContainer = styled.div`
   align-items: center;
   align-self: strech;
   display: flex;
   flex: auto;
-  height: 50vh;
+  height: Calc(100vh - 200px);
   justify-content: center;
 `;
 
 const IntroText = styled.div`
-  ${fontStack} font-size: 1.2em;
-  line-height: 1.6;
   max-width: 40vw;
   text-align: center;
 `;
@@ -21,7 +20,9 @@ const IntroText = styled.div`
 export const Intro = props => {
   return (
     <TextContainer>
-      <IntroText>{props.content}</IntroText>
+      <IntroText>
+        <P>{props.content}</P>
+      </IntroText>
     </TextContainer>
   );
 };

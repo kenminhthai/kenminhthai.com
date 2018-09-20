@@ -77,10 +77,12 @@ class Projects extends Component {
   }
 
   render() {
+    const location = this.props.history.goBack;
+
     return (
       <main>
         <HeadWrapper>
-          <GoBack />
+          <GoBack location={location} />
           <NavControl
             getNextScreen={this.handleGetNextScreen}
             getPrevScreen={this.handleGetPrevScreen}

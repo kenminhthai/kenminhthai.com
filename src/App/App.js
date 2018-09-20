@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { Transition } from "react-transition-group/Transition";
 import ReactGA from "react-ga";
-import { TweenLite } from "gsap";
 
 import Home from "./views/Home";
 import About from "./views/About";
@@ -13,8 +10,6 @@ import { ProjectList } from "../App/utils";
 
 import "./App.scss";
 import ProjectDetails from "./views/ProjectDetails";
-
-//Activate this later
 
 if (process.env.NODE_ENV === "production") {
   ReactGA.initialize("UA-71656211-8");
@@ -31,13 +26,17 @@ class App extends Component {
     const timeout = { enter: 500, exit: 500 };
     return (
       <div className="App">
-        <Switch>
-          <Route path="/about" component={About} />
+        <Switch location={location}>
+          <Route path="/about" render={props => <About {...props} />} />
+          <Route
+            exact
+            path="/works/:projectname"
+            render={props => <ProjectDetails data={ProjectList} {...props} />}
+          />
           <Route
             path="/works"
-            render={props => <Projects data={ProjectList} />}
+            render={props => <Projects data={ProjectList} {...props} />}
           />
-          <Route path="/works/:project-name" component={ProjectDetails} />
           <Route path="/not-found" component={NotFound} />
           <Route exact path="/" render={() => <Home />} />
           <Redirect to="/not-found" />

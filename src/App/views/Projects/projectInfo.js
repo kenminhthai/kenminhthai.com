@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import { NavLink } from "react-router-dom";
 import GSAP from "react-gsap-enhancer";
 import { TransitionGroup } from "react-transition-group";
 import styled from "styled-components";
 import { TimelineLite } from "gsap";
+import theme from "../../../shared/theme";
+import { H1, H6, P, Span } from "../../components/global";
 
 const ProjectBox = styled.div`
   align-self: center;
@@ -15,7 +18,7 @@ const InfoRow = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 10px 0;
 `;
 
 const InfoBox = styled.div`
@@ -23,10 +26,11 @@ const InfoBox = styled.div`
 `;
 
 const DescBlock = styled.div`
-  padding: 20px;
+  padding: 20px 0;
 `;
 
 const CTA = styled.div`
+  color: #ff3b30;
   margin-top: 30px;
 `;
 
@@ -46,24 +50,28 @@ class ProjectInfo extends Component {
     return (
       <TransitionGroup component={null}>
         <ProjectBox>
-          <h1 name="title">{this.props.info.name}</h1>
+          <H1 name="title">{this.props.info.name}</H1>
           <InfoRow name="infobox">
             <InfoBox>
-              <div>Role</div>
-              <div>{this.props.info.role}</div>
+              <H6>Role</H6>
+              <P>{this.props.info.role}</P>
             </InfoBox>
             <InfoBox>
-              <div>Company</div>
-              <div>{this.props.info.company}</div>
+              <H6>Company</H6>
+              <P>{this.props.info.company}</P>
             </InfoBox>
             <InfoBox>
-              <div>Completed</div>
-              <div>{this.props.info.year}</div>
+              <H6>Completed</H6>
+              <P>{this.props.info.year}</P>
             </InfoBox>
           </InfoRow>
-          <DescBlock name="desc">{this.props.info.desc}</DescBlock>
+          <DescBlock name="desc">
+            <P>{this.props.info.desc}</P>
+          </DescBlock>
           <CTA name="cta">
-            <a href={this.props.info.link}>view project</a>
+            <NavLink to={this.props.info.link} exact>
+              view project
+            </NavLink>
           </CTA>
         </ProjectBox>
       </TransitionGroup>

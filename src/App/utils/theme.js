@@ -87,5 +87,3 @@ export const theme = {
     pink: "#FF2D55"
   }
 };
-
-export default theme;

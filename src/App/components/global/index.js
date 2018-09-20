@@ -241,10 +241,10 @@ export const UnderlineInput = styled.input`
 `;
 
 export const H1 = styled.h1`
-  ${fontStack};
+  ${fontHeading};
   color: ${theme.text.default};
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: 3.5rem;
   line-height: 1.25;
   margin: 0;
   padding: 0;
@@ -253,7 +253,7 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
   color: ${theme.text.default};
   ${fontHeading};
-  font-weight: 700;
+  font-weight: 900;
   font-size: 1.25rem;
   line-height: 1.25;
   margin: 0;
@@ -291,7 +291,7 @@ export const H5 = styled.h5`
 `;
 
 export const H6 = styled.h6`
-  color: ${theme.text.default};
+  color: ${theme.text.default.secondary};
   ${fontStack};
   font-weight: 600;
   text-transform: uppercase;
@@ -305,8 +305,8 @@ export const P = styled.p`
   color: ${theme.text.default};
   ${fontStack};
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.4;
+  font-size: 1.25rem;
+  line-height: 1.58;
   margin: 0;
   padding: 0;
 `;
