@@ -21,9 +21,18 @@ const ContentWrapper = styled.div`
   z-index: 2;
 `;
 
-function leaveAnimation(utils) {
-  const tl = new TimelineMax();
-}
+const HeadWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  left: 0;
+  max-width: 100vw;
+  padding: 20px 5%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+`;
 
 class Projects extends Component {
   constructor(props) {
@@ -44,28 +53,17 @@ class Projects extends Component {
     };
   }
 
-  enterAnimation(utils) {
-    var tl = new TimelineMax();
-    tl.staggerFrom(utils.target, 2, {
-      opacity: 1,
-      y: "-= 300px"
-    });
-    return tl;
-  }
-
   setupScreens(utils) {
     let content = utils.target.findInChildren({ name: "projectlist" });
     let tl = new TimelineLite();
-
-    tl.staggerFrom(content, 1, { autoAlpha: "0" });
+    console.log(utils);
+    tl.staggerFrom(content, 0.5, { opacity: "0" });
     return tl;
   }
 
   componentDidMount(callback) {
     this.addAnimation(this.setupScreens);
   }
-
-  getCurrentScreen() {}
 
   handleGetNextScreen() {
     if (this.state.isShowing < this.state.projectList.length - 1) {
@@ -79,15 +77,17 @@ class Projects extends Component {
   }
 
   render() {
-    const timeout = { enter: 500, exit: 500 };
-    const projectList = this.props.data;
+    const location = this.props.history.goBack;
+
     return (
       <main>
-        <GoBack />
-        <NavControl
-          getNextScreen={this.handleGetNextScreen}
-          getPrevScreen={this.handleGetPrevScreen}
-        />
+        <HeadWrapper>
+          <GoBack location={location} />
+          <NavControl
+            getNextScreen={this.handleGetNextScreen}
+            getPrevScreen={this.handleGetPrevScreen}
+          />
+        </HeadWrapper>
         <ContentWrapper name="projectlist">
           <TransitionGroup>
             {this.state.projectList.map((project, index) => {

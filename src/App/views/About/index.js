@@ -13,18 +13,25 @@ import { Column } from "../../components/atm.Column";
 const ContentWrapper = styled.main`
   ${wrapperStyles};
 
-  margin: 8em auto;
-  padding: 0 1em;
+  max-width: 100vw;
+  padding: 1em;
   position: relative;
+  width: 100%;
+`;
+
+const Container = styled.div`
+  margin: 0 auto;
+  padding-top: 4rem;
 `;
 
 class About extends Component {
   state = {};
   render() {
+    const location = this.props.history.goBack;
     return (
-      <React.Fragment>
-        <GoBack />
-        <ContentWrapper>
+      <ContentWrapper>
+        <GoBack location={location} />
+        <Container>
           <Grid>
             <Column type="primary">
               <Portrait />
@@ -38,8 +45,8 @@ class About extends Component {
               />
             </Column>
           </Grid>
-        </ContentWrapper>
-      </React.Fragment>
+        </Container>
+      </ContentWrapper>
     );
   }
 }

@@ -30,7 +30,7 @@ export const ProjectList = [
     link: "/works/campsyte",
     content: [
       {
-        id: 0,
+        id: 1,
         type: "img",
         src: "https://picsum.photos/200/300"
       }
@@ -48,7 +48,7 @@ export const ProjectList = [
     link: "/works/campsyte-app",
     content: [
       {
-        id: 0,
+        id: 1,
         type: "img",
         src: "https://picsum.photos/200/300"
       }
@@ -67,9 +67,39 @@ export const ProjectList = [
     link: "/works/ags",
     content: [
       {
-        id: 0,
+        id: 1,
         type: "img",
-        src: "https://picsum.photos/200/300"
+        src: "/assets/imgs/ags/ags-pic-1.jpg"
+      },
+      {
+        id: 2,
+        type: "img",
+        src: "/assets/imgs/ags/ags-pic-2.jpg"
+      },
+      {
+        id: 3,
+        type: "img",
+        src: "/assets/imgs/ags/ags-pic-3.jpg"
+      },
+      {
+        id: 4,
+        type: "img",
+        src: "/assets/imgs/ags/ags-pic-4.jpg"
+      },
+      {
+        id: 5,
+        type: "img",
+        src: "/assets/imgs/ags/ags-pic-5.jpg"
+      },
+      {
+        id: 6,
+        type: "img",
+        src: "/assets/imgs/ags/ags-pic-6.jpg"
+      },
+      {
+        id: 7,
+        type: "img",
+        src: "/assets/imgs/ags/ags-pic-7.jpg"
       }
     ]
   },
@@ -86,9 +116,30 @@ export const ProjectList = [
     link: "/works/aetypic",
     content: [
       {
-        id: 0,
-        type: "img",
-        src: "https://picsum.photos/200/300"
+        id: 1,
+        type: "screen-viewer",
+        collection: [
+          {
+            id: 1,
+            name: "abc",
+            src: "/assets/imgs/aetypic/aetypic-pic-1.jpg"
+          },
+          {
+            id: 2,
+            name: "bcd",
+            src: "/assets/imgs/aetypic/aetypic-pic-2.jpg"
+          },
+          {
+            id: 3,
+            name: "efg",
+            src: "/assets/imgs/aetypic/aetypic-pic-3.jpg"
+          },
+          {
+            id: 4,
+            name: "mnl",
+            src: "/assets/imgs/aetypic/aetypic-pic-4.jpg"
+          }
+        ]
       }
     ]
   }
