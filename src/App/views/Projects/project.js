@@ -2,17 +2,15 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { TransitionGroup, Transition } from "react-transition-group";
 import styled from "styled-components";
-
 import ProjectMedia from "./projectMedia";
 import ProjectInfo from "./projectInfo";
+import { MainWrapper } from "../../components/Wrapper";
+
 import { TimelineMax, TimelineLite } from "gsap";
 
 const Box = styled.section`
-  align-items: center;
-  display: flex;
+  ${MainWrapper};
   height: 100%;
-  justify-content: center;
-  padding: 0 5%;
   position: absolute;
   width: 100%;
 `;
@@ -26,36 +24,12 @@ class Project extends Component {
     this.name = `project-${props.projectIndex + 1}`;
   }
 
-  setupScreens({ target }) {
-    let tl = new TimelineLite();
-    tl.to(target, 0, { opacity: "0" });
-    return tl;
-  }
-
-  entering({ target }) {
-    let tl = new TimelineLite();
-    tl.to(target, 1, { backgroundColor: "red" });
-    return tl;
-  }
-
-  leaving({ target }) {
-    let tl = new TimelineLite();
-    tl.to(target, 1, { opacity: "0" });
-    return tl;
-  }
-
-  componentWillEnter() {
-    console.log("entering");
-  }
-
-  ComponentWillLeave() {}
-
   render() {
     return this.props.show ? (
-      <Box>
+      <TransitionGroup component={null}>
         <ProjectInfo info={this.props.project} />
         <ProjectMedia src={this.props.project.mediaSrc} />
-      </Box>
+      </TransitionGroup>
     ) : null;
   }
 }

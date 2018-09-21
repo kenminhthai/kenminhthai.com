@@ -25,23 +25,21 @@ class App extends Component {
     // const currentkey = location.key;
     const timeout = { enter: 500, exit: 500 };
     return (
-      <div className="App">
-        <Switch location={location}>
-          <Route path="/about" render={props => <About {...props} />} />
-          <Route
-            exact
-            path="/works/:projectname"
-            render={props => <ProjectDetails data={ProjectList} {...props} />}
-          />
-          <Route
-            path="/works"
-            render={props => <Projects data={ProjectList} {...props} />}
-          />
-          <Route path="/not-found" component={NotFound} />
-          <Route exact path="/" render={() => <Home />} />
-          <Redirect to="/not-found" />
-        </Switch>
-      </div>
+      <Switch location={location}>
+        <Route path="/about" render={props => <About {...props} />} />
+        <Route
+          exact
+          path="/works/:projectname"
+          render={props => <ProjectDetails data={ProjectList} {...props} />}
+        />
+        <Route
+          path="/works"
+          render={props => <Projects data={ProjectList} {...props} />}
+        />
+        <Route path="/not-found" component={NotFound} />
+        <Route exact path="/" render={() => <Home />} />
+        <Redirect to="/not-found" />
+      </Switch>
     );
   }
 }

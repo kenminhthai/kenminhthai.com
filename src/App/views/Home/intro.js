@@ -8,21 +8,25 @@ const TextContainer = styled.div`
   align-self: strech;
   display: flex;
   flex: auto;
-  height: Calc(100vh - 200px);
+  height: Calc(100% - 200px);
   justify-content: center;
 `;
 
 const IntroText = styled.div`
-  max-width: 40vw;
   text-align: center;
+  @media (max-width: 767px) {
+    margin-top: 10vh;
+  }
+  @media (min-width: 768px) {
+    margin-top: 20vh;
+    max-width: 45vw;
+  }
 `;
 
 export const Intro = props => {
   return (
-    <TextContainer>
-      <IntroText>
-        <P>{props.content}</P>
-      </IntroText>
-    </TextContainer>
+    <IntroText>
+      <P>{props.content}</P>
+    </IntroText>
   );
 };

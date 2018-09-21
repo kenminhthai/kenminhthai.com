@@ -7,6 +7,12 @@ import { TransitionGroup } from "react-transition-group";
 
 const Wrapper = styled.div`
   flex: 1 0 calc(65% - 8px);
+  display: flex;
+  align-items: flex-end;
+  @media (max-width: 767px) {
+    flex-shrink: 1;
+    order: 0;
+  }
 `;
 
 class ProjectMedia extends Component {
@@ -25,7 +31,7 @@ class ProjectMedia extends Component {
 
   render() {
     return (
-      <TransitionGroup>
+      <TransitionGroup component={null}>
         <Wrapper>
           <Img src={this.props.src} alt="later" width="100%" />
         </Wrapper>

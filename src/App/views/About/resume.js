@@ -1,43 +1,42 @@
 import React from "react";
 import styled from "styled-components";
-import { fontHeading, Red, P } from "../../components/global";
+import { fontHeading, H1, H6, H5, P } from "../../components/global";
+import { theme } from "../../utils/theme";
+
+const Container = styled.div`
+  padding-top: 3rem;
+`;
 
 const Title = styled.h1`
-  font-size: 5em;
+  font-size: 5rem;
   ${fontHeading};
-  color: #000;
+  color: ${theme.bg.reverse};
   margin: 0;
 `;
 
-const Subheading = styled.h6`
-  font-size: 0.85em;
-  ${Red};
-  text-transform: uppercase;
+const Subheading = styled(H6)`
+  font-size: 0.85rem;
+  color: ${theme.brand.default};
   letter-spacing: 2px;
-  margin-bottom: 1.8em;
+  margin-bottom: 1.8rem;
 `;
 
-const Subtitle = styled.h5`
-  font-size: 1.2em;
-  font-weight: 200;
-  color: gray;
+const Subtitle = styled(H5)`
+  color: ${theme.text.wash};
 `;
 
 const Line = styled.div`
-  background-color: red;
+  background-color: ${theme.bg.hairline};
   display: block;
-  height: 5em;
-  margin: 2em 2px;
+  height: 5rem;
+  margin: 2rem 2px;
   width: 1px;
 `;
 
-const Desc = styled.p`
-  font-weight: 400;
-  font-size: 1.2em;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0.5em 0;
-  margin: 0.25em 0;
+const Desc = styled(P)`
+  font-size: 1.25rem;
+  line-height: 1.65;
+  margin: 0.35rem 0;
 `;
 
 const Contact = styled.div`
@@ -46,7 +45,7 @@ const Contact = styled.div`
 
 export const Resume = props => {
   return (
-    <div>
+    <Container>
       <Subheading>{props.subheading}</Subheading>
       <Title>{props.title}</Title>
       <Subtitle>{props.subtitle}</Subtitle>
@@ -62,7 +61,7 @@ export const Resume = props => {
         digital experiences through the meaningful power of design.
       </Desc>
       <Contact>
-        <h2>Hire me</h2>
+        <H1>Hire me</H1>
         <Desc>
           I like to work with startups and local businesses. If you need a
           website or web app, I would love to build it for you.
@@ -72,6 +71,6 @@ export const Resume = props => {
           <a href="mailto:hello@kenminhthai.com">hello@kenminhthai.com</a>
         </Desc>
       </Contact>
-    </div>
+    </Container>
   );
 };

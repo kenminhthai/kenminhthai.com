@@ -23,7 +23,7 @@ export const ProjectList = [
     color: "#7ed321",
     role: "UI/UX Developer",
     company: "Campsyte",
-    year: "ongoing",
+    year: "Ongoing",
     desc:
       "Designed and developed Campsyte brochure site from sketches to the production of 40 inner pages and blog posts.",
     mediaSrc: "/assets/imgs/campsyte/campsyte-preview.png",
@@ -42,7 +42,7 @@ export const ProjectList = [
     color: "#7ed321",
     role: "UI/UX Developer",
     company: "Campsyte",
-    year: "ongoing",
+    year: "Ongoing",
     desc: "Designed and developed Campsyte web app from the ground up",
     mediaSrc: "/assets/imgs/campsyte/campsyte-preview.png",
     link: "/works/campsyte-app",

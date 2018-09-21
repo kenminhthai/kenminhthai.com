@@ -3,17 +3,11 @@ import ReactDOM from "react-dom";
 import { TransitionGroup, Transition } from "react-transition-group";
 import GSAP from "react-gsap-enhancer";
 import { TimelineMax } from "gsap";
-import styled from "styled-components";
 import Header from "../../components/Ui.Header";
 import { Intro } from "./intro";
 import { selfIntro } from "../../utils";
 import { TxtBg } from "../../components/atm.TxtBg";
-import { contentWrapperStyles } from "../../components/atm.Wrapper";
-
-const ContentWrapper = styled.section`
-  ${contentWrapperStyles};
-  position: fixed;
-`;
+import { MainWrapper, ContentWrapper } from "../../components/Wrapper";
 
 class Home extends Component {
   constructor(props) {
@@ -41,7 +35,6 @@ class Home extends Component {
 
   render() {
     const duration = 300;
-
     const defaultStyle = {
       transition: `opacity ${duration}ms ease-in-out`,
       opacity: 0
@@ -52,12 +45,14 @@ class Home extends Component {
       entered: { opacity: 1 }
     };
     return (
-      <TransitionGroup component="main" enter exit>
-        <Header name="header" />
-        <ContentWrapper name="content">
-          <Intro content={selfIntro} />
+      <TransitionGroup component={null} enter exit>
+        <MainWrapper height="100vh">
+          <Header name="header" />
+          <ContentWrapper name="content">
+            <Intro content={selfIntro} />
+          </ContentWrapper>
           <TxtBg text="Ken" name="ken" />
-        </ContentWrapper>
+        </MainWrapper>
       </TransitionGroup>
     );
   }

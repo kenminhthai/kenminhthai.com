@@ -254,7 +254,7 @@ export const H2 = styled.h2`
   color: ${theme.text.default};
   ${fontHeading};
   font-weight: 900;
-  font-size: 1.25rem;
+  font-size: 2.5rem;
   line-height: 1.25;
   margin: 0;
   padding: 0;
@@ -264,7 +264,7 @@ export const H3 = styled.h3`
   color: ${theme.text.default};
   ${fontStack};
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 2rem;
   line-height: 1.5;
   margin: 0;
   padding: 0;
@@ -274,7 +274,7 @@ export const H4 = styled.h4`
   color: ${theme.text.default};
   ${fontStack};
   font-weight: 500;
-  font-size: 0.875rem;
+  font-size: 1.5rem;
   line-height: 1.4;
   margin: 0;
   padding: 0;
@@ -284,28 +284,30 @@ export const H5 = styled.h5`
   color: ${theme.text.default};
   ${fontStack};
   font-weight: 500;
-  font-size: 0.75rem;
+  font-size: 1.25rem;
   line-height: 1.4;
   margin: 0;
   padding: 0;
 `;
 
 export const H6 = styled.h6`
-  color: ${theme.text.default.secondary};
+  color: ${props =>
+    props.color ? `${props.color}` : `${theme.text.secondary}`};
   ${fontStack};
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 0.675rem;
+  font-size: 0.75rem;
   line-height: 1.5;
   margin: 0;
   padding: 0;
+  letter-spacing: 1px;
 `;
 
 export const P = styled.p`
   color: ${theme.text.default};
   ${fontStack};
   font-weight: 400;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.58;
   margin: 0;
   padding: 0;

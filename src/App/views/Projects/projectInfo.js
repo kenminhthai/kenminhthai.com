@@ -5,24 +5,28 @@ import GSAP from "react-gsap-enhancer";
 import { TransitionGroup } from "react-transition-group";
 import styled from "styled-components";
 import { TimelineLite } from "gsap";
-import theme from "../../../shared/theme";
+import { theme } from "../../utils/theme";
 import { H1, H6, P, Span } from "../../components/global";
 
 const ProjectBox = styled.div`
   align-self: center;
   padding: 20px 0;
+  @media (max-width: 768px) {
+    flex: 1 0 100%;
+    flex-shrink: 1;
+    order: 1;
+  }
 `;
 
 const InfoRow = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   padding: 10px 0;
 `;
 
 const InfoBox = styled.div`
-  background: white;
+  margin-right: 2rem;
 `;
 
 const DescBlock = styled.div`
@@ -30,7 +34,7 @@ const DescBlock = styled.div`
 `;
 
 const CTA = styled.div`
-  color: #ff3b30;
+  color: ${theme.brand.default};
   margin-top: 30px;
 `;
 
@@ -53,15 +57,11 @@ class ProjectInfo extends Component {
           <H1 name="title">{this.props.info.name}</H1>
           <InfoRow name="infobox">
             <InfoBox>
-              <H6>Role</H6>
+              <H6 color={theme.text.wash}>Role</H6>
               <P>{this.props.info.role}</P>
             </InfoBox>
             <InfoBox>
-              <H6>Company</H6>
-              <P>{this.props.info.company}</P>
-            </InfoBox>
-            <InfoBox>
-              <H6>Completed</H6>
+              <H6 color={theme.text.wash}>Completed</H6>
               <P>{this.props.info.year}</P>
             </InfoBox>
           </InfoRow>

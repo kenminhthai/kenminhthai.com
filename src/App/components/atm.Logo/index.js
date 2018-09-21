@@ -21,7 +21,7 @@ export const Svg = styled.svg`
 export const SvgWrapper = styled.div`
   display: inline-block;
   flex: none;
-  width: 200px;
+  width: 120px;
   height: 40px;
   top: 4px;
   position: relative;

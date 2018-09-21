@@ -4,7 +4,7 @@ import { Caption } from "../../components/atm.Caption";
 
 const ImgWrapper = styled.div`
   display: flex;
-  justify-content: center;
+  flex-shrink: 0;
 `;
 
 const ImageBlock = props => {
