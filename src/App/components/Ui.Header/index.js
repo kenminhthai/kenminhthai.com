@@ -3,6 +3,7 @@ import Menu from "../obj.Menu";
 import { Logo } from "../atm.Logo";
 import { getLinks } from "../../utils";
 import { StyledHeader } from "./style";
+import { HeaderWrapper } from "../Wrapper";
 
 class Header extends Component {
   constructor(props) {
@@ -13,10 +14,10 @@ class Header extends Component {
   }
   render() {
     return (
-      <StyledHeader className={StyleSheet.header}>
+      <HeaderWrapper>
         <Logo />
         <Menu links={this.state.linkItems} />
-      </StyledHeader>
+      </HeaderWrapper>
     );
   }
 }

@@ -7,31 +7,27 @@ import { TimelineMax, TweenMax, TweenLite, TimelineLite } from "gsap";
 import Project from "./project";
 import { NavControl } from "./navigation";
 import { GoBack } from "../../components/atm.GoBack";
-import Grid from "../../components/atm.Grid";
-import Column from "../../components/atm.Column";
+
 import {
-  wrapperStyles,
-  contentWrapperStyles
-} from "../../components/atm.Wrapper";
+  MainWrapper,
+  ContentWrapper,
+  HeaderWrapper
+} from "../../components/Wrapper";
 
-const ContentWrapper = styled.div`
-  ${contentWrapperStyles};
-  background: #fff;
-  overflow: hidden;
-  z-index: 2;
-`;
-
-const HeadWrapper = styled.div`
+const ContentBox = styled(ContentWrapper)`
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  left: 0;
-  max-width: 100vw;
-  padding: 20px 5%;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 4;
+  overflow: hidden;
+  z-index: 2;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 class Projects extends Component {
@@ -80,16 +76,16 @@ class Projects extends Component {
     const location = this.props.history.goBack;
 
     return (
-      <main>
-        <HeadWrapper>
+      <MainWrapper height="100vh">
+        <HeaderWrapper>
           <GoBack location={location} />
           <NavControl
             getNextScreen={this.handleGetNextScreen}
             getPrevScreen={this.handleGetPrevScreen}
           />
-        </HeadWrapper>
-        <ContentWrapper name="projectlist">
-          <TransitionGroup>
+        </HeaderWrapper>
+        <ContentBox name="projectlist">
+          <TransitionGroup component={null}>
             {this.state.projectList.map((project, index) => {
               return (
                 <Project
@@ -101,8 +97,8 @@ class Projects extends Component {
               );
             })}
           </TransitionGroup>
-        </ContentWrapper>
-      </main>
+        </ContentBox>
+      </MainWrapper>
     );
   }
 }

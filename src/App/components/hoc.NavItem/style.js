@@ -9,9 +9,16 @@ const NavItem = css`
   line-height: 1;
   position: relative;
   text-align: center;
-  padding: 8px 12px;
   list-style: none;
   display: inline-block;
+
+  @media screen and (max-width: 767px) {
+    padding-left: 12px;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 0 12px;
+  }
 `;
 
 export const StyledNavItem = styled.li`

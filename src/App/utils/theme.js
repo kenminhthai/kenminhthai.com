@@ -67,7 +67,8 @@ export const theme = {
     reverse: "#FFFFFF",
     placeholder: "#A3AFBF",
     secondary: "#6f5557",
-    impress: "#4400CC"
+    impress: "#4400CC",
+    wash: "#cbcbcc"
   },
   warn: {
     default: "#ed0411",

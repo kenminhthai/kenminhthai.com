@@ -6,6 +6,7 @@ import { TweenLite, TimelineLite } from "gsap";
 import { theme } from "../../utils/theme";
 import { Caption } from "../../components/atm.Caption";
 import SingleImage from "./singleImage";
+import { getOffset } from "../../utils/helpers";
 
 const LaptopWrapper = styled.div`
   display: flex;
@@ -20,20 +21,32 @@ const Laptop = styled.div`
   justify-content: center;
   height: 600px;
   position: relative;
-  width: 1024px;
-}
+  @media (max-width: 767px) {
+    width: ${props => `${props.width}px`};
+  }
+
+  @media (min-width: 768px) {
+    width: 1024px;
+  }}
 `;
 
 const Screen = styled.div`
-  max-width: 720px;
-  margin-top: 3rem;
-  border-radius: 10px;
+  border-radius: 4px;
   position: absolute;
+  overflow: hidden;
+  @media (max-width: 767px) {
+    margin-top: 15px;
+    width: ${props => `${props.width * 0.7}px`};
+  }
+
+  @media (min-width: 768px) {
+    margin-top: 3rem;
+    width: 720px;
+  }}
 `;
 
 const ScreenNav = styled.ul`
   list-style: none;
-  margin-top: 1rem;
   padding: 1rem 0;
   text-align: center;
   width: 100%;
@@ -41,12 +54,12 @@ const ScreenNav = styled.ul`
 
 const ScreenDots = styled.li`
   background: ${props =>
-    props.active ? `${theme.brand.default}` : `${theme.brand.wash}`};
+    props.active ? `${theme.brand.default}` : `${theme.bg.wash}`};
   border-radius: 50%;
   display: inline-block;
   margin: 5px;
   height: ${props => (props.active ? "12px" : "8px")};
-  transition: all 500ms ease-in-out;
+  transition: color 300ms ease-in, width 200ms ease-in-out;
   width: ${props => (props.active ? "12px" : "8px")};
 `;
 
@@ -54,7 +67,9 @@ class LaptopBlock extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      screenActive: 1
+      screenActive: 1,
+      isMobileView: false,
+      screenWidth: 0
     };
     this.handleSelected = this.handleSelected.bind(this);
   }
@@ -63,7 +78,15 @@ class LaptopBlock extends Component {
     this.setState({ screenActive: id });
   }
 
-  componentDidMount() {}
+  setScreenWidth() {
+    this.setState({ screenWidth: window.innerWidth });
+  }
+
+  isInView(scroll) {}
+
+  componentDidMount() {
+    this.setScreenWidth();
+  }
 
   render() {
     const { caption, bordered } = this.props;
@@ -82,12 +105,10 @@ class LaptopBlock extends Component {
         )
     );
 
-    console.log();
-
     return (
       <LaptopWrapper>
-        <Laptop>
-          <Screen>
+        <Laptop width={this.state.screenWidth}>
+          <Screen width={this.state.screenWidth}>
             <SingleImage src={src} />
             <ScreenNav>{screenDots}</ScreenNav>
           </Screen>

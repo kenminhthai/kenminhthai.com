@@ -3,12 +3,13 @@ import styled, { css } from "styled-components";
 import { FlexCol } from "../global";
 
 const BaseColumn = styled(FlexCol)`
-  margin: 32px 16px;
   align-items: stretch;
+  margin: 32px 16px;
 
   @media (max-width: 768px) {
     margin: 0;
     max-width: 100%;
+    order: ${props => (props.order ? `${props.order}` : "")};
   }
 
   ${p =>

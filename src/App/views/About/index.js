@@ -6,34 +6,27 @@ import { Resume } from "./resume";
 import { Portrait } from "./portrait";
 import { resumeIntro } from "../../utils/index";
 
-import { wrapperStyles } from "../../components/atm.Wrapper";
 import Grid from "../../components/atm.Grid";
 import { Column } from "../../components/atm.Column";
 
-const ContentWrapper = styled.main`
-  ${wrapperStyles};
-
-  max-width: 100vw;
-  padding: 1em;
-  position: relative;
-  width: 100%;
-`;
-
-const Container = styled.div`
-  margin: 0 auto;
-  padding-top: 4rem;
-`;
+import {
+  MainWrapper,
+  HeaderWrapper,
+  ContentWrapper
+} from "../../components/Wrapper";
 
 class About extends Component {
   state = {};
   render() {
     const location = this.props.history.goBack;
     return (
-      <ContentWrapper>
-        <GoBack location={location} />
-        <Container>
+      <MainWrapper>
+        <HeaderWrapper>
+          <GoBack location={location} />
+        </HeaderWrapper>
+        <ContentWrapper>
           <Grid>
-            <Column type="primary">
+            <Column type="primary" order="2">
               <Portrait />
             </Column>
             <Column type="secondary">
@@ -45,8 +38,8 @@ class About extends Component {
               />
             </Column>
           </Grid>
-        </Container>
-      </ContentWrapper>
+        </ContentWrapper>
+      </MainWrapper>
     );
   }
 }
