@@ -1,19 +1,34 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Caption } from "../../components/atm.Caption";
 
 const ImgWrapper = styled.div`
   display: flex;
-  flex-shrink: 0;
+  flex-direction: column;
+  flex-shrink: 1;
+`;
+
+const Image = styled.img`
+  align-self: center;
+  max-width: 100%;
+  width: 100%;
+`;
+
+const CaptionWrapper = styled.div`
+  margin: 1rem 0;
 `;
 
 const ImageBlock = props => {
   const { caption, bordered } = props;
-  const captionElement = caption ? <Caption value={caption} /> : null;
+  const captionElement = caption ? (
+    <CaptionWrapper>
+      <Caption value={caption} />
+    </CaptionWrapper>
+  ) : null;
 
   return (
     <ImgWrapper>
-      <img src={props.src} />
+      <Image src={props.src} />
       {captionElement}
     </ImgWrapper>
   );

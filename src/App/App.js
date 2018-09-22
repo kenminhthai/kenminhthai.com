@@ -1,19 +1,37 @@
 import React, { Component } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
+import Loadable from "react-loadable";
 import ReactGA from "react-ga";
+import asyncComponent from "./utils/asyncComponent";
 
-import Home from "./views/Home";
-import About from "./views/About";
-import Projects from "./views/Projects";
-import NotFound from "./views/NotFound";
 import { ProjectList } from "../App/utils";
 
+// Load Base Style
 import "./App.scss";
-import ProjectDetails from "./views/ProjectDetails";
 
 if (process.env.NODE_ENV === "production") {
   ReactGA.initialize("UA-71656211-8");
 }
+
+const Home = asyncComponent(() =>
+  import("./views/Home").then(module => module.default)
+);
+
+const About = asyncComponent(() =>
+  import("./views/About").then(module => module.default)
+);
+
+const Projects = asyncComponent(() =>
+  import("./views/Projects").then(module => module.default)
+);
+
+const ProjectDetails = asyncComponent(() =>
+  import("./views/ProjectDetails").then(module => module.default)
+);
+
+const NotFound = asyncComponent(() =>
+  import("./views/NotFound").then(module => module.default)
+);
 
 class App extends Component {
   constructor(props) {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import { TransitionGroup, Transition } from "react-transition-group";
+import styled from "styled-components";
 import GSAP from "react-gsap-enhancer";
 import { TimelineMax } from "gsap";
 import Header from "../../components/Ui.Header";
@@ -8,6 +8,10 @@ import { Intro } from "./intro";
 import { selfIntro } from "../../utils";
 import { TxtBg } from "../../components/atm.TxtBg";
 import { MainWrapper, ContentWrapper } from "../../components/Wrapper";
+
+const Main = styled(MainWrapper)`
+  overflow: hidden;
+`;
 
 class Home extends Component {
   constructor(props) {
@@ -17,20 +21,15 @@ class Home extends Component {
 
   animationSource(utils) {
     const tl = new TimelineMax();
-    tl.staggerFrom(utils.target, 2, {
+    tl.staggerFrom(utils.target, 1, {
       opacity: 1,
       y: "-= 300px"
     });
-    console.log(utils.target.findInChildren({ name: "content" }));
     return tl;
   }
 
   componentDidMount(callback) {
-    this.addAnimation(this.animationSource);
-  }
-
-  animatingIn(el) {
-    console.log(el);
+    // this.addAnimation(this.animationSource);
   }
 
   render() {
@@ -46,13 +45,13 @@ class Home extends Component {
     };
     return (
       <TransitionGroup component={null} enter exit>
-        <MainWrapper height="100vh">
+        <Main height="100vh">
           <Header name="header" />
           <ContentWrapper name="content">
             <Intro content={selfIntro} />
           </ContentWrapper>
           <TxtBg text="Ken" name="ken" />
-        </MainWrapper>
+        </Main>
       </TransitionGroup>
     );
   }

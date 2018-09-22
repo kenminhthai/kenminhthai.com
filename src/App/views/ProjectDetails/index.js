@@ -12,22 +12,6 @@ import ImageBlock from "./imagebock";
 import LaptopBlock from "./laptopblock";
 import { NavBtns } from "./navigation";
 
-// const ContentBox = styled(ContentWrapper)`
-//   align-items: center;
-//   display: flex;
-//   justify-content: space-between;
-//   overflow: hidden;
-//   z-index: 2;
-
-//   @media (max-width: 767px) {
-//     flex-direction: column;
-//   }
-
-//   @media (min-width: 768px) {
-//     flex-direction: row;
-//   }
-// `;
-
 class ProjectDetails extends Component {
   constructor(props, context) {
     super(props, context);
@@ -38,8 +22,12 @@ class ProjectDetails extends Component {
     const project = data.find(p => p.link.split("/")[2] === projectName);
     const content = project.content.map(content => {
       switch (content.type) {
+        case "head":
+          return (
+            <InfoBlock src={content.text} title={projectName} {...this.props} />
+          );
         case "img":
-          return <ImageBlock src={content.src} />;
+          return <ImageBlock src={content.src} caption={content.caption} />;
         case "screen-viewer":
           return <LaptopBlock src={content.collection} />;
       }
@@ -49,7 +37,6 @@ class ProjectDetails extends Component {
         <HeaderWrapper>
           <NavBtns {...this.props} />
         </HeaderWrapper>
-        <InfoBlock info={project} {...this.props} />
         {content}
       </MainWrapper>
     );

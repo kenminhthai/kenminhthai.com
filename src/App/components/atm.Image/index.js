@@ -2,20 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Img(props) {
-  return (
-    <img
-      className={props.className}
-      src={props.src}
-      alt={props.alt}
-      width={props.width}
-    />
-  );
+  return <img src={props.src} alt={props.alt} width={props.width} />;
 }
 
 Img.propTypes = {
   src: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
   alt: PropTypes.string.isRequired,
-  className: PropTypes.string
+  width: PropTypes.string
 };
 
 export default Img;
