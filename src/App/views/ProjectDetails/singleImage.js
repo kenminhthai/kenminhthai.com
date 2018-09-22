@@ -1,31 +1,26 @@
 import React, { Component } from "react";
 import { TransitionGroup } from "react-transition-group";
-import GSAP from "react-gsap-enhancer";
-import { TweenLite, TimelineLite } from "gsap";
-
+import { TweenLite, TimelineLite, TimelineMax } from "gsap";
 import Img from "../../components/atm.Image";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  overflow: hidden;
+`;
 
 class SingleImage extends Component {
   state = {};
-
-  entering({ target }) {
-    let tl = new TimelineLite();
-    tl.staggerFrom(target, 1, { x: "+=100px" });
-    console.log(target);
+  entering(utils) {
+    let tl = new TimelineMax();
+    tl.staggerFrom(utils.target, 5, { alpha: 0, x: 800 });
     return tl;
   }
 
-  componentDidMount() {
-    this.addAnimation(this.entering);
-  }
+  componentDidMount() {}
 
   render() {
-    return (
-      <TransitionGroup>
-        <Img src={this.props.src} width="100%" />
-      </TransitionGroup>
-    );
+    return <Img src={this.props.src} width="100%" name="image" />;
   }
 }
 
-export default GSAP()(SingleImage);
+export default SingleImage;

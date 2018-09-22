@@ -30,7 +30,7 @@ const PrimaryColumn = styled(BaseColumn)`
     width: 100%;
     max-width: 100%;
     margin-top: 2px;
-    ${"" /* flex: auto; */} flex: none;
+    flex: none;
   }
 `;
 

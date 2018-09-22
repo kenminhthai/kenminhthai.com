@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import GSAP from "react-gsap-enhancer";
-import { TransitionGroup } from "react-transition-group";
+import { TransitionGroup, Transition } from "react-transition-group";
 import { TweenLite, TimelineLite } from "gsap";
 import { theme } from "../../utils/theme";
 import { Caption } from "../../components/atm.Caption";
 import SingleImage from "./singleImage";
 import { getOffset } from "../../utils/helpers";
+import { ReactDOM } from "react-dom";
 
 const LaptopWrapper = styled.div`
   display: flex;
@@ -42,7 +42,7 @@ const Screen = styled.div`
   @media (min-width: 768px) {
     margin-top: 3rem;
     width: 720px;
-  }}
+  }
 `;
 
 const ScreenNav = styled.ul`
@@ -50,6 +50,11 @@ const ScreenNav = styled.ul`
   padding: 1rem 0;
   text-align: center;
   width: 100%;
+  @media (min-width: 768px) {
+  }
+  @media (max-width: 767px) {
+    margin-top: 3rem;
+  }
 `;
 
 const ScreenDots = styled.li`
@@ -74,19 +79,23 @@ class LaptopBlock extends Component {
     this.handleSelected = this.handleSelected.bind(this);
   }
 
+  setScreenWidth() {
+    this.setState({ screenWidth: window.innerWidth });
+  }
+
   handleSelected(id) {
     this.setState({ screenActive: id });
   }
 
-  setScreenWidth() {
-    this.setState({ screenWidth: window.innerWidth });
-  }
+  laptopSlideUp({ target }) {}
 
   isInView(scroll) {}
 
   componentDidMount() {
     this.setScreenWidth();
   }
+
+  animate = React.createRef();
 
   render() {
     const { caption, bordered } = this.props;
@@ -104,12 +113,11 @@ class LaptopBlock extends Component {
           />
         )
     );
-
     return (
       <LaptopWrapper>
         <Laptop width={this.state.screenWidth}>
           <Screen width={this.state.screenWidth}>
-            <SingleImage src={src} />
+            <SingleImage src={src} width="100%" ref={this.animate} />
             <ScreenNav>{screenDots}</ScreenNav>
           </Screen>
         </Laptop>
@@ -118,4 +126,4 @@ class LaptopBlock extends Component {
   }
 }
 
-export default GSAP()(LaptopBlock);
+export default LaptopBlock;

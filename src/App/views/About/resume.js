@@ -36,11 +36,15 @@ const Line = styled.div`
 const Desc = styled(P)`
   font-size: 1.25rem;
   line-height: 1.65;
-  margin: 0.35rem 0;
+  margin: 1rem 0;
 `;
 
 const Contact = styled.div`
   margin: 1em 0;
+`;
+
+const Link = styled.a`
+  color: ${theme.brand.default};
 `;
 
 export const Resume = props => {
@@ -68,7 +72,7 @@ export const Resume = props => {
         </Desc>
         <Desc>
           For new projects and inquiries:{" "}
-          <a href="mailto:hello@kenminhthai.com">hello@kenminhthai.com</a>
+          <Link href="mailto:hello@kenminhthai.com">hello@kenminhthai.com</Link>
         </Desc>
       </Contact>
     </Container>
