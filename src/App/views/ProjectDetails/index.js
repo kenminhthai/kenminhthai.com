@@ -11,6 +11,7 @@ import InfoBlock from "./infoblock";
 import ImageBlock from "./imagebock";
 import LaptopBlock from "./laptopblock";
 import { NavBtns } from "./navigation";
+import ScrollTop from "../../components/atmScrollTopBtn/index";
 
 class ProjectDetails extends Component {
   constructor(props, context) {
@@ -38,6 +39,7 @@ class ProjectDetails extends Component {
           <NavBtns {...this.props} />
         </HeaderWrapper>
         {content}
+        <ScrollTop />
       </MainWrapper>
     );
   }

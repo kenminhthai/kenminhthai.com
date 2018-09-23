@@ -2,14 +2,14 @@ export const theme = {
   bg: {
     default: "#FFFFFF",
     reverse: "#2d2e30",
-    wash: "#cbcbcc",
+    wash: "#e7e4e4",
     border: "#ededee",
     hairline: "#e23a44",
     inactive: "#a8a9ab"
   },
   brand: {
     default: "#fc414c",
-    alt: "#414cfc",
+    alt: "#fc666f",
     wash: "#fda0a5",
     border: "#fed9db",
     dark: "#97272d"
