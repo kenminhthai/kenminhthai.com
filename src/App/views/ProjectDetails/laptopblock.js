@@ -9,8 +9,18 @@ import { getOffset } from "../../utils/helpers";
 import { ReactDOM } from "react-dom";
 
 const LaptopWrapper = styled.div`
+  background: ${theme.bg.wash};
   display: flex;
   justify-content: center;
+  margin: 1rem 0;
+
+  @media (max-width: 767px) {
+    padding: 4rem 0 2rem 0;
+  }
+
+  @media (min-width: 768px) {
+    padding: 5rem 0 3rem 0;
+  }
 `;
 
 const Laptop = styled.div`
@@ -19,13 +29,14 @@ const Laptop = styled.div`
   background-size: contain;
   display: flex;
   justify-content: center;
-  height: 600px;
   position: relative;
   @media (max-width: 767px) {
+    height: ${props => `${props.width * 0.9}px`};
     width: ${props => `${props.width}px`};
   }
 
   @media (min-width: 768px) {
+    height: 600px;
     width: 1024px;
   }}
 `;
@@ -59,7 +70,7 @@ const ScreenNav = styled.ul`
 
 const ScreenDots = styled.li`
   background: ${props =>
-    props.active ? `${theme.brand.default}` : `${theme.bg.wash}`};
+    props.active ? `${theme.brand.default}` : `${theme.bg.inactive}`};
   border-radius: 50%;
   display: inline-block;
   margin: 5px;
