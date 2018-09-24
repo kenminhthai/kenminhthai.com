@@ -54,19 +54,6 @@ export const ProjectList = [
       },
       {
         id: 2,
-        type: "img",
-        src: "/assets/imgs/campsyte/campsyte-pic-1.png",
-        caption:
-          "Campsyte Marketing Site Analysis - Persona, Card Sorting, Site Map, User Story"
-      },
-      {
-        id: 3,
-        type: "img",
-        src: "/assets/imgs/campsyte/campsyte-pic-2.png",
-        caption: "Generated Campsyte 1.0 flow for UX analysis"
-      },
-      {
-        id: 4,
         type: "screen-viewer",
         collection: [
           {
@@ -85,6 +72,19 @@ export const ProjectList = [
             src: "/assets/imgs/campsyte/campsyte-pic-5.png"
           }
         ]
+      },
+      {
+        id: 3,
+        type: "img",
+        src: "/assets/imgs/campsyte/campsyte-pic-1.png",
+        caption:
+          "Campsyte Marketing Site Analysis - Persona, Card Sorting, Site Map, User Story"
+      },
+      {
+        id: 4,
+        type: "img",
+        src: "/assets/imgs/campsyte/campsyte-pic-2.png",
+        caption: "Generated Campsyte 1.0 flow for UX analysis"
       }
     ]
   },

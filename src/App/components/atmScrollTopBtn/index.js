@@ -51,6 +51,7 @@ class ScrollTop extends Component {
       document.documentElement.scrollTop > this.state.distance
     )
       this.setState({ scrollTopShow: true });
+    else this.setState({ scrollTopShow: false });
   }
 
   handleScroll() {
