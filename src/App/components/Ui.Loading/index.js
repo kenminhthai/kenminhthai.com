@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
-import * as Segment from "segment-js";
 import GSAP from "react-gsap-enhancer";
 import { TimelineMax, TweenMax, TweenLite, Power2, Power3 } from "gsap";
 

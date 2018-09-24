@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 import { fontHeading, H1, H6, H5, P } from "../../components/global";
 import { theme } from "../../utils/theme";
@@ -45,36 +45,37 @@ const Contact = styled.div`
 
 const Link = styled.a`
   color: ${theme.brand.default};
+  font-size: 1.25rem;
 `;
 
-export const Resume = props => {
-  return (
-    <Container>
-      <Subheading>{props.subheading}</Subheading>
-      <Title>{props.title}</Title>
-      <Subtitle>{props.subtitle}</Subtitle>
-      <Line />
-      <Desc>
-        I am Ken Thai, a creative frontend developer specialized in digital
-        experiences and creative interactions.
-      </Desc>
+class Resume extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-      <Desc>
-        With a background in marketing communications, I aim to combine
-        emotional storytelling along with technology to create next level
-        digital experiences through the meaningful power of design.
-      </Desc>
-      <Contact>
-        <H1>Hire me</H1>
-        <Desc>
-          I like to work with startups and local businesses. If you need a
-          website or web app, I would love to build it for you.
-        </Desc>
-        <Desc>
-          For new projects and inquiries:{" "}
-          <Link href="mailto:hello@kenminhthai.com">hello@kenminhthai.com</Link>
-        </Desc>
-      </Contact>
-    </Container>
-  );
-};
+  render() {
+    const intro = this.props.introtext.split("<br/>").map(p => {
+      return <Desc>{p}</Desc>;
+    });
+    const inquiry = this.props.inquiryText.split("<br/>").map(p => {
+      return <Desc>{p}</Desc>;
+    });
+
+    return (
+      <Container>
+        <Subheading>{this.props.subheading}</Subheading>
+        <Title>{this.props.title}</Title>
+        <Subtitle>{this.props.subtitle}</Subtitle>
+        <Line />
+        {intro}
+        <Contact>
+          <H1>Hire me</H1>
+          {inquiry}
+          <Link href={`mailTo: ${this.props.email}`}>{this.props.email}</Link>
+        </Contact>
+      </Container>
+    );
+  }
+}
+
+export default Resume;

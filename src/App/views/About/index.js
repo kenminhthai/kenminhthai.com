@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
+import resume from "../../../shared/resume.json";
+
 import { GoBack } from "../../components/atm.GoBack";
-import { Resume } from "./resume";
+import ScrollTop from "../../components/atmScrollTopBtn";
+import Resume from "./resume";
 import { Portrait } from "./portrait";
-import { resumeIntro } from "../../utils/index";
 
 import Grid from "../../components/atm.Grid";
 import { Column } from "../../components/atm.Column";
@@ -31,14 +33,17 @@ class About extends Component {
             </Column>
             <Column type="secondary">
               <Resume
-                subheading="Who is Ken Thai"
-                title="Front End Developer"
-                subtitle="Based in San Francisco"
-                introtext={resumeIntro}
+                subheading={resume.subheading}
+                title={resume.title}
+                subtitle={resume.subtitle}
+                introtext={resume.intro}
+                inquiryText={resume.inquiry}
+                email={resume.email}
               />
             </Column>
           </Grid>
         </ContentWrapper>
+        <ScrollTop />
       </MainWrapper>
     );
   }

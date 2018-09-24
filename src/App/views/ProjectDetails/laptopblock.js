@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { TransitionGroup, Transition } from "react-transition-group";
-import { TweenLite, TimelineLite } from "gsap";
+import { TweenLite, TimelineLite, TimelineMax, Power3 } from "gsap";
 import { theme } from "../../utils/theme";
 import { Caption } from "../../components/atm.Caption";
-import SingleImage from "./singleImage";
 import { getOffset } from "../../utils/helpers";
 import { ReactDOM } from "react-dom";
 
@@ -37,7 +36,7 @@ const Laptop = styled.div`
 
   @media (min-width: 768px) {
     height: 600px;
-    width: 1024px;
+    width: 100vw;
   }}
 `;
 
@@ -87,6 +86,7 @@ class LaptopBlock extends Component {
       isMobileView: false,
       screenWidth: 0
     };
+    this.animate = React.createRef();
     this.handleSelected = this.handleSelected.bind(this);
   }
 
@@ -96,18 +96,17 @@ class LaptopBlock extends Component {
 
   handleSelected(id) {
     this.setState({ screenActive: id });
+    TweenLite.from(this.animate.current, 1, { x: "100%" });
+    TweenLite.to(this.animate.current, 1, { x: 0, ease: Power3.easeIn });
   }
-
-  laptopSlideUp({ target }) {}
-
-  isInView(scroll) {}
 
   componentDidMount() {
     this.setScreenWidth();
+    TweenLite.from(this.animate.current, 1, {
+      x: "100%",
+      ease: Power3.easeOut
+    });
   }
-
-  animate = React.createRef();
-
   render() {
     const { caption, bordered } = this.props;
     const captionElement = caption ? <Caption value={caption} /> : null;
@@ -124,11 +123,12 @@ class LaptopBlock extends Component {
           />
         )
     );
+
     return (
       <LaptopWrapper>
         <Laptop width={this.state.screenWidth}>
           <Screen width={this.state.screenWidth}>
-            <SingleImage src={src} width="100%" ref={this.animate} />
+            <img src={src} width="100%" ref={this.animate} />
             <ScreenNav>{screenDots}</ScreenNav>
           </Screen>
         </Laptop>

@@ -13,7 +13,7 @@ export default function asyncComponent(getComponent) {
             AsyncComponent.Component = Component;
             setTimeout(() => {
               this.setState({ Component });
-            }, 1000);
+            }, 500);
           })
           .catch(err => {
             console.error(err);

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import GSAP from "react-gsap-enhancer";
 import {
   MainWrapper,
   ContentWrapper,
