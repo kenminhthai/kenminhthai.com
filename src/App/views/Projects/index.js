@@ -5,6 +5,7 @@ import styled from "styled-components";
 import GSAP from "react-gsap-enhancer";
 import { TimelineMax, TweenMax, TweenLite, TimelineLite } from "gsap";
 import Project from "./project";
+import projects from "../../../shared/projects.json";
 import { NavControl } from "./navigation";
 import { GoBack } from "../../components/atm.GoBack";
 
@@ -36,8 +37,7 @@ class Projects extends Component {
     this.state = {
       isTransitioning: false,
       initFirstScreen: false,
-      isShowing: 0,
-      projectList: this.props.data
+      isShowing: 0
     };
     this.handleGetNextScreen = this.handleGetNextScreen.bind(this);
     this.handleGetPrevScreen = this.handleGetPrevScreen.bind(this);
@@ -52,7 +52,6 @@ class Projects extends Component {
   setupScreens(utils) {
     let content = utils.target.findInChildren({ name: "projectlist" });
     let tl = new TimelineLite();
-    console.log(utils);
     tl.staggerFrom(content, 0.5, { opacity: "0" });
     return tl;
   }
@@ -62,7 +61,7 @@ class Projects extends Component {
   }
 
   handleGetNextScreen() {
-    if (this.state.isShowing < this.state.projectList.length - 1) {
+    if (this.state.isShowing < projects.length - 1) {
       this.setState({ isShowing: this.state.isShowing + 1 });
     }
   }
@@ -74,7 +73,6 @@ class Projects extends Component {
 
   render() {
     const location = this.props.history.goBack;
-
     return (
       <MainWrapper height="100vh">
         <HeaderWrapper>
@@ -86,7 +84,7 @@ class Projects extends Component {
         </HeaderWrapper>
         <ContentBox name="projectlist">
           <TransitionGroup component={null}>
-            {this.state.projectList.map((project, index) => {
+            {projects.map((project, index) => {
               return (
                 <Project
                   key={project.slug}

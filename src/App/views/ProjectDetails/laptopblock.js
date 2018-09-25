@@ -96,7 +96,7 @@ class LaptopBlock extends Component {
 
   handleSelected(id) {
     this.setState({ screenActive: id });
-    TweenLite.from(this.animate.current, 1, { x: "100%" });
+    TweenLite.from(this.animate.current, 1, { x: "100%", alpha: 0.5 });
     TweenLite.to(this.animate.current, 1, { x: 0, ease: Power3.easeIn });
   }
 
@@ -107,6 +107,7 @@ class LaptopBlock extends Component {
       ease: Power3.easeOut
     });
   }
+
   render() {
     const { caption, bordered } = this.props;
     const captionElement = caption ? <Caption value={caption} /> : null;

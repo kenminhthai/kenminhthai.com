@@ -5,12 +5,21 @@ import GSAP from "react-gsap-enhancer";
 import { TimelineMax } from "gsap";
 import Header from "../../components/Ui.Header";
 import { Intro } from "./intro";
-import { selfIntro } from "../../utils";
 import { TxtBg } from "../../components/atm.TxtBg";
-import { MainWrapper, ContentWrapper } from "../../components/Wrapper";
+import {
+  MainWrapper,
+  ContentWrapper,
+  FooterWrapper
+} from "../../components/Wrapper";
+import site from "../../../shared/site.json";
 
 const Main = styled(MainWrapper)`
+  bottom: 0;
+  left: 0;
   overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
 `;
 
 class Home extends Component {
@@ -48,7 +57,7 @@ class Home extends Component {
         <Main height="100vh">
           <Header name="header" />
           <ContentWrapper name="content">
-            <Intro content={selfIntro} />
+            <Intro content={site.maincontent} />
           </ContentWrapper>
           <TxtBg text="Ken" name="ken" />
         </Main>

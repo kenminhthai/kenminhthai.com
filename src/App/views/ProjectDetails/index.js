@@ -5,7 +5,7 @@ import {
   ContentWrapper,
   HeaderWrapper
 } from "../../components/Wrapper";
-
+import projects from "../../../shared/projects.json";
 import InfoBlock from "./infoblock";
 import ImageBlock from "./imagebock";
 import LaptopBlock from "./laptopblock";
@@ -19,7 +19,7 @@ class ProjectDetails extends Component {
   render() {
     const { data } = this.props;
     const projectName = this.props.match.params.projectname;
-    const project = data.find(p => p.link.split("/")[2] === projectName);
+    const project = projects.find(p => p.link.split("/")[2] === projectName);
     const content = project.content.map(content => {
       switch (content.type) {
         case "head":
