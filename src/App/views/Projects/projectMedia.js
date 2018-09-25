@@ -58,7 +58,12 @@ class ProjectMedia extends Component {
     return (
       <TransitionGroup component={null}>
         <Wrapper>
-          <Img src={this.props.src} alt="later" width="100%" />
+          <Img
+            src={this.props.src.origin}
+            pre={this.props.src.pre}
+            alt="later"
+            width="100%"
+          />
         </Wrapper>
       </TransitionGroup>
     );

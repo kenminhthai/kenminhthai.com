@@ -140,7 +140,7 @@ class LaptopBlock extends Component {
         <LaptopWrapper>
           <Laptop width={this.state.screenWidth}>
             <Screen width={this.state.screenWidth}>
-              <img src={src} width="100%" ref={this.animate} />
+              <img src={src.origin} width="100%" ref={this.animate} />
               <ScreenNav>{screenDots}</ScreenNav>
             </Screen>
           </Laptop>

@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-
+import ProgressiveImage from "react-progressive-image";
 import Img from "../../components/atm.Image";
 
-const picSrc = "/assets/imgs/kenPortrait.png";
+const L = "/assets/imgs/kenPortrait.png";
+const S = "/assets/imgs/kenPortrait-pre.png";
 
 const Pic = styled.div`
   align-self: center;
@@ -13,7 +14,7 @@ const Pic = styled.div`
 export const Portrait = () => {
   return (
     <Pic>
-      <Img src={picSrc} alt="ken portrait" width="100%" />
+      <Img src={L} pre={S} alt="ken portrait" width="100%" />
     </Pic>
   );
 };

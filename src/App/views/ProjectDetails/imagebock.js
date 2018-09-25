@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { Caption } from "../../components/atm.Caption";
+import Img from "../../components/atm.Image";
 
 const ImgWrapper = styled.div`
   display: flex;
@@ -8,10 +9,9 @@ const ImgWrapper = styled.div`
   flex-shrink: 1;
 `;
 
-const Image = styled.img`
+const Image = styled(Img)`
   align-self: center;
   max-width: 100%;
-  width: 100%;
 `;
 
 const CaptionWrapper = styled.div`
@@ -30,7 +30,7 @@ const ImageBlock = props => {
 
   return (
     <ImgWrapper>
-      <Image src={props.src} />
+      <Image src={props.src.origin} pre={props.src.pre} width="100%" />
       {captionElement}
     </ImgWrapper>
   );

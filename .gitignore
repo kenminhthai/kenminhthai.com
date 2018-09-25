@@ -11,6 +11,7 @@
 
 # asset files
 /public/assets/
+.json
 
 # misc
 .DS_Store
