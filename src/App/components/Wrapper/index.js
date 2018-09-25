@@ -43,3 +43,12 @@ export const ContentWrapper = styled.div`
     props.paddingBottom ? `${props.paddingBottom}` : "0px"};
   z-index: 20;
 `;
+
+export const FooterWrapper = styled.footer`
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px 0;
+  width: 100%;
+`;

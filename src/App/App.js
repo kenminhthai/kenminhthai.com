@@ -4,8 +4,6 @@ import Loadable from "react-loadable";
 import ReactGA from "react-ga";
 import asyncComponent from "./utils/asyncComponent";
 
-import { ProjectList } from "../App/utils";
-
 // Load Base Style
 import "./App.scss";
 
@@ -48,12 +46,9 @@ class App extends Component {
         <Route
           exact
           path="/works/:projectname"
-          render={props => <ProjectDetails data={ProjectList} {...props} />}
+          render={props => <ProjectDetails {...props} />}
         />
-        <Route
-          path="/works"
-          render={props => <Projects data={ProjectList} {...props} />}
-        />
+        <Route path="/works" render={props => <Projects {...props} />} />
         <Route path="/not-found" component={NotFound} />
         <Route exact path="/" render={() => <Home />} />
         <Redirect to="/not-found" />
