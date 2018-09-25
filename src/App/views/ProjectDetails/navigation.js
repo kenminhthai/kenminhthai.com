@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 import { GoBack } from "../../components/atm.GoBack";
-import { SvgBtn } from "../../components/atm.SvgBtn";
 
 const NavWrapper = styled.div`
   position: relative;
@@ -29,12 +28,11 @@ const BtnWrapper = styled.div`
 `;
 
 export const NavBtns = props => {
-  const index = props.projectIndex;
-  const location = props.history.goBack;
-
+  const index = props.id;
+  const location = props.match.url.split(index).join("");
   return (
     <NavWrapper>
-      <GoBack location={location} />
+      <GoBack location={location} id={index} />
     </NavWrapper>
   );
 };

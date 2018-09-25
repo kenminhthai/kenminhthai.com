@@ -78,6 +78,12 @@ const ScreenDots = styled.li`
   width: ${props => (props.active ? "12px" : "8px")};
 `;
 
+const CaptionWrapper = styled.div`
+  margin: 0 auto;
+  max-width: 720px;
+  padding: 4rem 0;
+`;
+
 class LaptopBlock extends Component {
   constructor(props) {
     super(props);
@@ -110,7 +116,11 @@ class LaptopBlock extends Component {
 
   render() {
     const { caption, bordered } = this.props;
-    const captionElement = caption ? <Caption value={caption} /> : null;
+    const captionElement = caption ? (
+      <CaptionWrapper>
+        <Caption value={caption} />
+      </CaptionWrapper>
+    ) : null;
     const img = this.props.src.find(pic => pic.id === this.state.screenActive);
     let { src } = img;
     const screenDots = this.props.src.map(
@@ -126,14 +136,17 @@ class LaptopBlock extends Component {
     );
 
     return (
-      <LaptopWrapper>
-        <Laptop width={this.state.screenWidth}>
-          <Screen width={this.state.screenWidth}>
-            <img src={src} width="100%" ref={this.animate} />
-            <ScreenNav>{screenDots}</ScreenNav>
-          </Screen>
-        </Laptop>
-      </LaptopWrapper>
+      <React.Fragment>
+        <LaptopWrapper>
+          <Laptop width={this.state.screenWidth}>
+            <Screen width={this.state.screenWidth}>
+              <img src={src} width="100%" ref={this.animate} />
+              <ScreenNav>{screenDots}</ScreenNav>
+            </Screen>
+          </Laptop>
+        </LaptopWrapper>
+        {captionElement}
+      </React.Fragment>
     );
   }
 }
