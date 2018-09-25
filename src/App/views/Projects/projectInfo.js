@@ -39,6 +39,7 @@ const CTA = styled.div`
   position: relative;
   overflow: hidden;
   display: inline-block;
+  transform: translateX(-10px);
   transition: transform 300ms ease-out 100ms, color 300ms ease-in-out;
 
   &::before {
@@ -67,6 +68,7 @@ const CTA = styled.div`
 
   &:hover {
     color: ${theme.brand.default};
+    transform: translateX(0);
 
     &::before,
     &::after {

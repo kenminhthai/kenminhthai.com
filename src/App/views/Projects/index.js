@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import queryString from "query-string";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import styled from "styled-components";
 import GSAP from "react-gsap-enhancer";
@@ -37,6 +38,13 @@ class Projects extends Component {
     this.state = {
       isTransitioning: false,
       initFirstScreen: false,
+      projectId: this.props.location.search
+        ? projects.find(
+            project =>
+              queryString.parse(this.props.location.search).project ===
+              project.slug
+          ).id - 1
+        : null,
       isShowing: 0
     };
     this.handleGetNextScreen = this.handleGetNextScreen.bind(this);
@@ -58,6 +66,8 @@ class Projects extends Component {
 
   componentDidMount(callback) {
     this.addAnimation(this.setupScreens);
+    if (this.state.projectId)
+      this.setState({ isShowing: this.state.projectId });
   }
 
   handleGetNextScreen() {

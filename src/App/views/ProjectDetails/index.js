@@ -29,13 +29,15 @@ class ProjectDetails extends Component {
         case "img":
           return <ImageBlock src={content.src} caption={content.caption} />;
         case "screen-viewer":
-          return <LaptopBlock src={content.collection} />;
+          return (
+            <LaptopBlock src={content.collection} caption={content.caption} />
+          );
       }
     });
     return (
       <MainWrapper>
         <HeaderWrapper>
-          <NavBtns {...this.props} />
+          <NavBtns {...this.props} id={projectName} />
         </HeaderWrapper>
         {content}
         <ScrollTop />

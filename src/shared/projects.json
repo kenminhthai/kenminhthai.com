@@ -1,12 +1,13 @@
 [
   {
-    "name": "Campsyte Site",
-    "slug": "campsyteSite",
+    "id": 1,
+    "name": "Campsyte Site Refresh",
+    "slug": "campsyte",
     "color": "#7ed321",
     "role": "UI/UX Developer",
     "company": "Campsyte",
-    "year": "Ongoing",
-    "desc": "Designed and developed Campsyte brochure site from sketches to the production of 40 inner pages and blog posts.",
+    "year": "2016",
+    "desc": "Completly redesigned and developed 40 pages and blog posts for Cmapsyte brochure site.",
     "mediaSrc": "/assets/imgs/campsyte/campsyte-preview.png",
     "link": "/works/campsyte",
     "content": [
@@ -24,10 +25,10 @@
             "tech": "WordPress, Jquery"
           },
           {
-            "intro": "Campsyte is a small startup converting outdoor under-utilized venues into on-demand theme space. At Campsyte, we envision ourselves as Airbnb for outdoor theme venues. I work closely with founders revamping Campsyte marketing site from design through development to launching."
+            "intro": "Campsyte is a small startup converting outdoor under-utilized venues into on-demand theme space. At Campsyte, we envision ourselves as Airbnb for outdoor theme venues. I worked closely with founders revamping Campsyte marketing site from design through development to launching."
           },
           {
-            "responsibility": "Campsyte website was flooded with web traffic in 2015 thanks to ABCNews, Business Insider, and SFGate; however the site, developed in 2013, had confusing flow and couldn’t persuade users to book. The first major project with the team was to edesign the corporate site to improve user understanding and click through. To compound matters, I was the sole UI/UX developer assigned."
+            "responsibility": "Campsyte website was flooded with web traffic in 2015 thanks to ABCNews, Business Insider, and SFGate; however the site, developed in 2013, had confusing flow and couldn’t persuade users to book. The first major project with the team was to redesign the corporate site to improve user understanding and click through. To compound matters, I was the sole UI/UX developer assigned."
           }
         ]
       },
@@ -55,19 +56,21 @@
       {
         "id": 3,
         "type": "img",
-        "src": "/assets/imgs/campsyte/campsyte-pic-2.png"
+        "src": "/assets/imgs/campsyte/campsyte-pic-1.png",
+        "caption": "I like to use Trello and Post-It to organise my research as it makes it easy to share and collaborate with other team members. Above is the board that I summarized after coducting a bunch of research through persona testing, card sorting, and user feedback. The discovery phase really helped us define the needs of frequent users as well as user flows."
       },
       {
-        "id": 4,
+        "id": 3,
         "type": "img",
-        "src": "/assets/imgs/campsyte/campsyte-pic-1.png",
-        "caption": "Campsyte Marketing Site Analysis - Persona, Card Sorting, Site Map, User Story"
+        "src": "/assets/imgs/campsyte/campsyte-pic-2.png",
+        "caption": "Now armed with useful insights into users needs and behaviors, I sketched out some initial ideas for what the flow might look like. This allowed me to quickly chop and change UI components and also aided team discussions and stakeholder meetings."
       }
     ]
   },
   {
+    "id": 2,
     "name": "Campsyte App",
-    "slug": "campsyteApp",
+    "slug": "campsyte-app",
     "color": "#7ed321",
     "role": "UI/UX Developer",
     "company": "Campsyte",
@@ -141,6 +144,7 @@
     ]
   },
   {
+    "id": 3,
     "name": "Ags",
     "slug": "ags",
     "color": "#67b815",
@@ -168,7 +172,7 @@
             "intro": "AGS is an integrative design firm that specializes in architecture and engineering. Customers range from American Airlines, SFO, and the city of San Francisco serving over 30 years."
           },
           {
-            "responsibility": "As a marketing designer, I oversee the digital-based marketing assets including: corporate website/intranet sites, social media presence, email newsletters, blog entries, event materials, and presentations. In 2016, I updated the old website and performed SEO to list on top-10 Google rankings for competitive keywords."
+            "responsibility": "The AGS homepage hadn’t been updated in a while and there were a bunch of known customer pain points which needed to be addressed. As soon as I joined the team, I modernized the aesthetic and performed SEO to list on top-10 Google rankings for competitive keywords."
           }
         ]
       },
@@ -210,6 +214,7 @@
     ]
   },
   {
+    "id": 4,
     "name": "Aetypic",
     "slug": "aetypic",
     "color": "#fc414c",
@@ -270,6 +275,7 @@
     ]
   },
   {
+    "id": 5,
     "name": "Dj Melodie",
     "slug": "melodie",
     "color": "#fc414c",
@@ -305,6 +311,78 @@
         "id": 2,
         "type": "img",
         "src": "/assets/imgs/melodie/melodie-pic-1.png"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Kaleidoscope",
+    "slug": "kaleidoscope",
+    "color": "#fc414c",
+    "role": "Web Developer",
+    "company": "Kaleidoscope",
+    "year": "2018",
+    "desc": "Built a simple and elegant portfolio for Kaleidoscope – a real estate and interior design services firm. The site was built with VueJS and GSAP for smooth animations and scroll interactions.",
+    "mediaSrc": "/assets/imgs/kaleidoscope/kaleidoscope-preview.png",
+    "link": "/works/kaleidoscope",
+    "content": [
+      {
+        "id": 1,
+        "type": "head",
+        "text": [
+          {
+            "category": "Real estate, interior design services"
+          },
+          {
+            "style": "Clean, bright"
+          },
+          {
+            "tech": "VueJS"
+          },
+          {
+            "intro": "Kaleidoscope, based in the Bay Area, is a small firm providing a wide range of interior design and staging services thorough California."
+          },
+          {
+            "responsibility": "I worked with the team to build the marketing site using VueJS and WordPress. Asides, I helped the team with some SEO planning."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "type": "screen-viewer",
+        "caption": "The one-screen-at-a-time site allows the visitors to discover the concept of drawing boards. The suble animations that reveal the images on scroll also helped to convey the message.",
+        "collection": [
+          {
+            "id": 1,
+            "name": "abc",
+            "src": "/assets/imgs/kaleidoscope/kaleidoscope-pic-1.png"
+          },
+          {
+            "id": 2,
+            "name": "bcd",
+            "src": "/assets/imgs/kaleidoscope/kaleidoscope-pic-2.png"
+          },
+          {
+            "id": 3,
+            "name": "efg",
+            "src": "/assets/imgs/kaleidoscope/kaleidoscope-pic-3.png"
+          },
+          {
+            "id": 4,
+            "name": "mnl",
+            "src": "/assets/imgs/kaleidoscope/kaleidoscope-pic-4.png"
+          },
+          {
+            "id": 5,
+            "name": "mnl",
+            "src": "/assets/imgs/kaleidoscope/kaleidoscope-pic-5.png"
+          },
+          {
+            "id": 6,
+            "name": "mnl",
+            "src": "/assets/imgs/kaleidoscope/kaleidoscope-pic-6.png"
+          }
+        ]
       }
     ]
   }
